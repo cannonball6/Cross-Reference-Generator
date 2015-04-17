@@ -4,6 +4,8 @@
 #include <stdlib.h>
 int main (void)
 {
+    
+    //TESTINGINGINGINGINGINGING
     //    int c;
     //    FILE *fptr;
     char *mode = "r+";
