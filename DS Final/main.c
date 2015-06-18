@@ -13,15 +13,23 @@ int main (void)
     hashTable* HashTable;
     HashTable = createTable(7);
     
-    idxToken* Lists;
+    hashTable* reservedHash;
+    reservedHash = createTable(37);
     
-    Node* element;
+    //idxToken* Lists;
+    
+    //Node* element;
     
     const char* delim = " (),.\"{}\t\n;<>";
     char *mode = "r+";
     char filename[] = "/Users/Cannon/Documents/Newbee.c";
     
     const char* reserved[256] = {"auto", "break", "case", "char", "const", "continue", "default", "do", "double", "else", "enum", "extern", "float", "for", "goto", "if", "int", "long", "register", "return", "short", "signed", "sizeof", "static", "struct", "switch", "typedef", "union", "unsigned", "void", "volatile", "while", "_packed"};
+    
+    for (int i = 0; i < 33; i++)
+    {
+        reservedHash = insertLines(createIdxToken(reserved[i]), reservedHash, -1);
+    }
     
     // open the file for reading
     FILE *file = fopen("/Users/Cannon/Documents/Projects/DS Final/DS Final/InputFile.c", mode);
@@ -48,38 +56,26 @@ int main (void)
         char *pch = strtok(buffer, delim);
         while (pch != NULL)
         {
-            printf("%s\n", pch);
+            if (!lookup(pch, reservedHash))
+            {
+                strcpy(src, pch);
+                HashTable = insertLines(createIdxToken(src), HashTable, line_number);
+                pch = strtok(NULL, delim); //Reset tokenizer
+                continue;
+            }
+            //printf("%s\n", pch);
             
-            strcpy(src, pch);
-            HashTable = insertLines(createIdxToken(src), HashTable, line_number);
-            pch = strtok(NULL, delim);
-            printTable(HashTable);
-            printf("\n\n");
+           
+            pch = strtok(NULL, delim); //Reset tokenizer
+            //printTable(HashTable);
+            //printf("\n\n");
         }
         printTable(HashTable);
         printf("\n\n");
         printf("\n\n");
     }
     
-//    for (int i = 0; i < HashTable->size; i++)
-//    {
-//        if (HashTable->table[i] != NULL)
-//        {
-//            fprintf(out, "index:%d %s", i, HashTable->table[i]->token);
-//            //fprintf(out, "\n\tLine Numbers: ");
-//            
-//            Node* currentPtr = idxToken->;
-//            
-//            //while not the end of the list*/
-//            while (currentPtr != NULL)
-//            {
-//                fprintf(out,"%d ", currentPtr->data);
-//                currentPtr = currentPtr->prev;
-//            }
-//            //printList(ht->table[i]->lineNumbers);
-//            fprintf(out, "\n");
-//        }
-//    }
+
     fflush(stdout);
     
     printTable(HashTable);

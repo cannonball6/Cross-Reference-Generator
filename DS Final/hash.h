@@ -83,15 +83,17 @@ int lookup(char* key, hashTable* ht)
 {
     int index = findSlot(key, ht);
     
-    if (strcmp(ht->table[index]->token, key) != 0)       //key is in table
-        return 1;
-    else                        //key is not in table
-        printf("Not Found");
-    
+    if (ht->table[index] != NULL)
+    {
+        if (strcmp(ht->table[index]->token, key) == 0)       //key is in table
+            return 1;
+        else                        //key is not in table
+            printf("Not Found");
+    }
     return 0;
 }
 hashTable* insertLines(idxToken* token, hashTable* ht, int lineNumber)
-{ //Need to append line numbers to list
+{ //Appending line numbers to the list
     
     int index = findSlot(token->token, ht);
     
