@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A193B4D1ADF4932002D23A7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4A193B4C1ADF4932002D23A7 /* main.c */; };
+		4A7A3FCC1AF6F47B00E3A4E6 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A3FC91AF6F47B00E3A4E6 /* list.c */; };
+		4A7A3FCD1AF6F47B00E3A4E6 /* node.c in Sources */ = {isa = PBXBuildFile; fileRef = 4A7A3FCB1AF6F47B00E3A4E6 /* node.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,12 @@
 /* Begin PBXFileReference section */
 		4A193B491ADF4932002D23A7 /* DS Final */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "DS Final"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A193B4C1ADF4932002D23A7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		4A7A3FC81AF6F45100E3A4E6 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
+		4A7A3FC91AF6F47B00E3A4E6 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
+		4A7A3FCA1AF6F47B00E3A4E6 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		4A7A3FCB1AF6F47B00E3A4E6 /* node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = node.c; sourceTree = "<group>"; };
+		4AEA337A1AE2D11E00774A78 /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
+		4AEA337B1AE2D29C00774A78 /* fileio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileio.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,12 @@
 			isa = PBXGroup;
 			children = (
 				4A193B4C1ADF4932002D23A7 /* main.c */,
+				4AEA337B1AE2D29C00774A78 /* fileio.h */,
+				4AEA337A1AE2D11E00774A78 /* hash.h */,
+				4A7A3FC81AF6F45100E3A4E6 /* node.h */,
+				4A7A3FC91AF6F47B00E3A4E6 /* list.c */,
+				4A7A3FCA1AF6F47B00E3A4E6 /* list.h */,
+				4A7A3FCB1AF6F47B00E3A4E6 /* node.c */,
 			);
 			path = "DS Final";
 			sourceTree = "<group>";
@@ -119,6 +133,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A193B4D1ADF4932002D23A7 /* main.c in Sources */,
+				4A7A3FCC1AF6F47B00E3A4E6 /* list.c in Sources */,
+				4A7A3FCD1AF6F47B00E3A4E6 /* node.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +248,7 @@
 				4A193B521ADF4932002D23A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
